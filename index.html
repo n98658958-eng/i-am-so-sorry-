@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Happy bleated birthday kash <3</title>
+<style>
+body {
+  margin:0; font-family:"Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #ff9a9e, #fecfef);
+  display:flex; justify-content:center; align-items:center; height:100vh;
+}
+.card {
+  background: rgba(255,255,255,0.15);
+  padding:30px; border-radius:20px; text-align:center;
+  color:#fff; max-width:500px; width:90%; position:relative;
+  backdrop-filter: blur(6px);
+}
+h1{margin-bottom:6px;}
+p.lead{margin-bottom:18px; opacity:0.95;}
+.caption{margin-top:8px; font-size:1rem; opacity:0.95;}
+.meme img{
+  width:250px; border-radius:12px; cursor:pointer; transition: transform 0.3s;
+}
+.meme img:hover{transform:scale(1.05);}
+.message-box{
+  background: rgba(255,255,255,0.1);
+  border-radius:12px;
+  padding:14px;
+  margin:16px 0;
+  display:none;
+  text-align:left;
+  max-height:300px;   /* scroll if message is long */
+  overflow-y:auto;
+  word-wrap: break-word;
+  line-height: 1.4rem;
+}
+audio{margin-top:16px; width:100%; max-width:400px; border-radius:12px;}
+
+/* Confetti / hearts */
+.float-wrap{position:absolute; inset:0; pointer-events:none;}
+.heart {
+  position:absolute; width:30px; height:30px; transform-origin:center;
+  animation: floatUp linear infinite;
+}
+@keyframes floatUp {
+  0% {transform: translateY(120%) scale(0.9); opacity:0;}
+  10% {opacity:1;}
+  100% {transform: translateY(-40%) scale(1.05); opacity:0;}
+}
+.h1{left:6%; animation-duration:9s; animation-delay:0s;}
+.h2{left:20%; animation-duration:11s; animation-delay:2s;}
+.h3{left:34%; animation-duration:8s; animation-delay:1.2s;}
+.h4{left:54%; animation-duration:10s; animation-delay:0.6s;}
+.h5{left:70%; animation-duration:12s; animation-delay:3s;}
+.h6{left:84%; animation-duration:9.5s; animation-delay:1.8s;}
+.confetti {
+  position:absolute; left:50%; top:-10px; transform:translateX(-50%);
+  width:600px; height:400px; pointer-events:none;
+}
+.confetti .dot{
+  position:absolute; width:8px; height:12px; border-radius:2px; opacity:0;
+  animation: confetti-fall linear forwards;
+}
+@keyframes confetti-fall {
+  0% { transform: translateY(-20%) rotate(0deg); opacity:1; }
+  100% { transform: translateY(120%) rotate(720deg); opacity:0; }
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+  <div class="float-wrap" aria-hidden="true">
+    <svg class="heart h1" viewBox="0 0 24 24" fill="#fff"><path d="M12 21s-8-5.4-10-8.6C-0.2 7.6 4.5 3 8.6 5.1 10.5 6.3 12 8 12 8s1.5-1.7 3.4-2.9C19.5 3 24.2 7.6 22 12.4 20 15.6 12 21 12 21z"/></svg>
+    <svg class="heart h2" viewBox="0 0 24 24" fill="#fff"><path d="M12 21s-8-5.4-10-8.6C-0.2 7.6 4.5 3 8.6 5.1 10.5 6.3 12 8 12 8s1.5-1.7 3.4-2.9C19.5 3 24.2 7.6 22 12.4 20 15.6 12 21 12 21z"/></svg>
+    <svg class="heart h3" viewBox="0 0 24 24" fill="#fff"><path d="M12 21s-8-5.4-10-8.6C-0.2 7.6 4.5 3 8.6 5.1 10.5 6.3 12 8 12 8s1.5-1.7 3.4-2.9C19.5 3 24.2 7.6 22 12.4 20 15.6 12 21 12 21z"/></svg>
+    <svg class="heart h4" viewBox="0 0 24 24" fill="#fff"><path d="M12 21s-8-5.4-10-8.6C-0.2 7.6 4.5 3 8.6 5.1 10.5 6.3 12 8 12 8s1.5-1.7 3.4-2.9C19.5 3 24.2 7.6 22 12.4 20 15.6 12 21 12 21z"/></svg>
+    <svg class="heart h5" viewBox="0 0 24 24" fill="#fff"><path d="M12 21s-8-5.4-10-8.6C-0.2 7.6 4.5 3 8.6 5.1 10.5 6.3 12 8 12 8s1.5-1.7 3.4-2.9C19.5 3 24.2 7.6 22 12.4 20 15.6 12 21 12 21z"/></svg>
+    <svg class="heart h6" viewBox="0 0 24 24" fill="#fff"><path d="M12 21s-8-5.4-10-8.6C-0.2 7.6 4.5 3 8.6 5.1 10.5 6.3 12 8 12 8s1.5-1.7 3.4-2.9C19.5 3 24.2 7.6 22 12.4 20 15.6 12 21 12 21z"/></svg>
+  </div>
+
+  <h1>Sorry for missing your birthday kajukatli<3</h1>
+  <p class="lead">Hey <span id="herName">Kashu</span> — I’m really sorry! 💜</p>
+
+
+  <!-- Meme/Image -->
+  <div class="meme">
+    <img id="memeImg" src="meme.jpg" alt="Cute Meme">
+  </div>
+  <div class="caption">“Please forgive me”</div>
+
+  <!-- Hidden message -->
+  <div id="hiddenMsg" class="message-box">
+    💌 Surprise! I am so sorry that i missed your birthday i dont want to give any justification! A great friend never forgets a special person's bday!
+<br> This little special thing is a sorry and a bleated birthday gift for you! I just want you to know youre really special to me! and i wanna meet you one day for real
+ <br> youre so amazing, youre so cool, youre so talented, youre so smart like fr!! mein jitna bhi tarif kru woh kam hai!!! youre so perfect and i wish you grow more and improve more!
+ <br>i love your smile i love your eyes! i love your personality! youre so perfect! and thank you believeing in me like no one has ever belived in me so much like you have! i am really sorry that i forgot your birthday!
+ <br>but in future i will never forget your birthday and will try to make your birthday as special as youre till we get 100 and die lmao! but you deserve so much and i couldnt do much this is all i could do in short time span for you!  i <br>dont want you to be mad at me! please! also the song. IT IS FOR YOU!!! <3. and the last verse ii freestyled it okay so it is like just for you exclusive! that im sorry and stuff! i was little tired andsick so vocals aint perfect im so sorry          <br>about that but i wabted to do eveything asap! im again really really sorry and i promise aage se esa kuch nahi krunga!! youre so lovely and i forgot a lovely girls bday i feel so sad genuinely! i hope your  day went really well! 
+<br><3 i am so happy to have you in my life <3 i want to see you happy <3 you give me motivation to study <3 you give me so much power <3 youre so perfect and obv nazar na lage apko hehe ( im a non believer but still no risk with <br>you i have so so so so much to tell you i have so much to say about you but i dont think it is the right place! next birthday i will try to make it special and will write more about you and yeah those lyricsa re jsut for you maybe i <br>will makea whole song about it who knows. BUT I AM REALLY SORRY AGAIN. Happy bleated birthday kajukatliiiii ( ah shit your smile came in my mind and i was like awww i really love it so i hope youre smiling rn and i wish <br>i could hug you rn thank you for everything <3
+<br>yours truly
+<br>N <3
+ </div>
+
+  <!-- Audio player -->
+  <audio controls>
+    <source src="song.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <div class="confetti"></div>
+</div>
+
+<script>
+// Editable her name
+const herNameSpan = document.getElementById('herName');
+herNameSpan.contentEditable = true;
+
+// Confetti function
+function createConfetti(n){
+  const confettiContainer = document.querySelector('.confetti');
+  const colors = ['#ffd1dc','#fff2b2','#bce0fd','#d1ffd6','#ffddf0'];
+  confettiContainer.innerHTML = '';
+  for(let i=0;i<n;i++){
+    const dot = document.createElement('div');
+    dot.classList.add('dot');
+    dot.style.background = colors[Math.floor(Math.random()*colors.length)];
+    dot.style.left = Math.random()*100+'%';
+    dot.style.animationDuration = 2+Math.random()*2+'s';
+    dot.style.animationDelay = Math.random()*2+'s';
+    confettiContainer.appendChild(dot);
+  }
+}
+
+// Clickable image -> show hidden message + confetti
+const img = document.getElementById('memeImg');
+img.addEventListener('click', ()=>{
+  const msg = document.getElementById('hiddenMsg');
+  msg.style.display = 'block';
+  createConfetti(40);
+});
+</script>
+
+</body>
+</html>
+Add index.html
